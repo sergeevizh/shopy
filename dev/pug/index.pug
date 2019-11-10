@@ -1,0 +1,12 @@
+extends template/main
+
+block variables
+	- var title = "main page"
+	- var pageClass = "index-page"
+
+block content
+	include pages/index/sliders/slider-index/slider-featured
+	include pages/index/new-arrivals/new-arrivals
+	include pages/index/hot-deal/hot-deal
+	include pages/index/best-sales/best-sales
+	include modules/news-letter/news-letter

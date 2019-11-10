@@ -1,0 +1,53 @@
+section.s-product-details
+	.container
+		.product-details
+			.product-details__row
+				.product-details__sliders
+					.product-details__main
+						.product-details__item.product-details__item-main
+							.product-details__main-img
+								picture
+									img(src="static/images/content/product-details/slider-main/img1.jpg", alt="Half Jacket").product-details__img
+						.product-details__item.product-details__item-main
+							.product-details__main-img
+								picture
+									img(src="static/images/content/product-details/slider-main/img2.jpg", alt="Skiny Trousers").product-details__img
+						.product-details__item.product-details__item-main
+							.product-details__main-img
+								picture
+									img(src="static/images/content/product-details/slider-main/img3.jpg", alt="Boot leather").product-details__img
+					.product-details__nav
+						.product-details__item
+							.product-details__nav-img
+								picture
+									img(src="static/images/content/product-details/slider-nav/img1.jpg", alt="Half Jacket").product-details__img
+						.product-details__item
+							.product-details__nav-img
+								picture
+									img(src="static/images/content/product-details/slider-nav/img2.jpg", alt="Skiny Trousers").product-details__img
+						.product-details__item
+							.product-details__nav-img
+								picture
+									img(src="static/images/content/product-details/slider-nav/img3.jpg", alt="Boot leather").product-details__img
+				.product-details__desc
+					.product-details__block
+						span.product-details__title FULL WINTER KIT
+						span.product-details__subtitle Half Jacket + Skiny Trousers + Boot leather
+						p.product-details__text Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
+					.product-details__line-controls
+						+size-product(true,"product-details__block-size")
+						.quantity.product-details__block-quantity
+							span.quantity__text Choos Quantity
+							.quantity__block.quantity__block--ml.quantity__block--mr16
+								button(type="button").quantity__btn.disable.minus
+									+icon("minus", "icon")
+								span(data-count="1").quantity__count 1
+								button(type="button").quantity__btn.plus
+									+icon("plus", "icon")
+					.product-details__bottom
+						.price-product.product-details__price-product
+							span.price-product__text Price :
+							span.price-product__cost 120$
+						+wishlist('product-details__wishlist')
+						.product-details__btn
+							button(type="button" value="Order Now").btn Order Now

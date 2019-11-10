@@ -1,0 +1,20 @@
+.product-selected.basket-user__product-selected
+	.product-selected__img
+		a(href="reebok-track-jacket.html").product-selected__link
+			img(src="static/images/content/basket/img1.jpg", alt="Reebok Track Jacket" height="90" width="90")
+	.product-selected__info
+		.product-selected__header
+			a(href="reebok-track-jacket.html").product-selected__info-link
+				span.product-selected__title Reebok Track Jacket
+		.product-selected__block
+			.line-stars.product-selected__line-stars
+				ul.line-stars__list
+					- for(var i = 0; i < 3; i++)
+						li.line-stars__item.line-stars__item--color--accent
+							+icon('star', 'icon')
+						if i == 2
+							li.line-stars__item
+								+icon('star', 'icon')
+			span.product-selected__price 100$
+	button(type="button" value="delete to cart").btn-delete.product-selected__btn-delete
+			+icon("delete-icon", "icon")

@@ -1,0 +1,35 @@
+.basket-user-menu
+	.basket-user
+		.basket-user__header
+			button(type="button").close-btn.basket-user__btn-close
+				+icon("close-button", "icon")
+			span.basket-user__title Your basket
+		.basket-user__body
+			include ./item/item1
+			include ./item/item2
+			include ./item/item3
+			include ./item/item4
+			include ./item/item1
+			include ./item/item2
+			include ./item/item3
+			include ./item/item4
+		.basket-user__footer
+			.total-price
+				span.total-price__text Total :
+				span.total-price__cost 800$
+				a(href="#").total-price__btn.btn pay
+			.basket-user__footer-social
+				.social.basket-user__social
+					ul.social__list
+						li.social__item
+							a(href="#" title="Main facebook").social__link
+								+icon("facebook-logo", "icon")
+						li.social__item
+							a(href="#" title="Main twitter").social__link
+								+icon("twitter-logo", "icon")
+						li.social__item
+							a(href="#" title="Main google").social__link
+								+icon("google-logo", "icon")
+						li.social__item
+							a(href="#" title="Main instagram").social__link
+								+icon("instagram-logo", "icon")

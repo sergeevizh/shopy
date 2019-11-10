@@ -1,0 +1,18 @@
+.slider-featured__item
+	picture.slider-featured__img.slider-featured__img--transform.slider-featured__img--transition
+		source(media='(max-width: 768px)' srcset='static/images/general/baner/img3-tiny.png')
+		img(src="static/images/general/baner/img3.png", alt="product" width="800" height="650")
+	.container
+		.slider-featured__row
+			.slider-featured__block
+				.slider-featured__desc
+					a(href="reebok-track-jacket.html").slider-featured__desc__title FULL WINTER KIT
+					span.slider-featured__desc__subtitle Half Jacket + Skiny Trousers + Boot leather
+					p.slider-featured__desc__text Lorem Ipsum is simply dummy text of the printing and typesetting industry
+				.slider-featured__order
+					.slider-featured__order__price
+						span.slider-featured__order__text Price :
+						span.slider-featured__order__cost 120$
+					.slider-featured__order__btn
+						a(href="#").btn-order.btn-order--accent Order Now
+							+icon("basket","icon")

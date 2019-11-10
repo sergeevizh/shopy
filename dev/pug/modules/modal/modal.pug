@@ -1,0 +1,27 @@
+.modal-overlay
+	.modal-signup
+		.modal-signup__container
+			.modal-signup__header
+				span.modal-signup__title SIGN IN
+			.modal-signup__body
+				form(action="#").modal-signup-form
+					.modal-signup__field
+						label(for="login").offscreen Login
+						input(type="text" name="login" id="login" placeholder="Login" ).modal-signup__input
+					.modal-signup__field
+						label(for="password").offscreen Lassword
+						input(type="password" name="password" id="password" placeholder="Password").modal-signup__input
+					.modal-signup__field
+						button(type="submit").btn.modal-signup__btn Sign in
+					.modal-signup__field
+						.checkbox.modal-signup__checkbox
+							.checkbox__field
+								input(type='checkbox' id="remember_me" name='remember_me').checkbox__input
+								label(for='remember_me').checkbox__label Remember me
+							a.checkbox__link(href='#') Forgot your password?
+			.modal-signup__footer
+				.modal-signup__footer-header
+					span.modal-signup__footer-title NEW CUSTOMER?
+				a(href="#").modal-signup__footer-btn Register here
+			button(type="button").close-btn.modal-signup__btn-close
+				+icon("close-button", "icon")

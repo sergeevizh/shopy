@@ -1,0 +1,12 @@
+section.s-new-arrivals.m-b-120
+	.s-title
+		h2.s-title__title <span class="s-title__first-word">NEW</span> ARRIVALS
+		span.s-title__subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry
+	.container
+		.new-arrivals
+			.new-arrivals__row
+				+card-prev("new-arrivals__item", "1")
+				+card-prev("new-arrivals__item", "2")
+				+card-prev("new-arrivals__item", "3")
+				+card-prev("new-arrivals__item", "4")
+		include ../../../modules/load-more-button/load-more-button.pug

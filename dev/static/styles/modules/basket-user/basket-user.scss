@@ -1,0 +1,297 @@
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+
+	&--is-active {
+		z-index: $zindex-fixed - 1;
+		background-color: rgba($river-bed, .3);
+		transition: all .4s ease-in-out;
+	}
+
+}
+
+.basket-user-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(100%);
+	width: 350px;
+	height: 100%;
+	display: none;
+	overflow: hidden;
+	z-index: $zindex-fixed;
+	background-color: $content-color;
+	animation: basket-down .4s ease-in-out;
+
+	@include phone {
+		width: 100%;
+	}
+
+	&--is-active {
+		transform: translateX(0);
+		animation: basket-up .4s ease-in-out;
+	}
+}
+
+.basket-user {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+
+	@include not-last {
+		margin-bottom: 15px;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-align: center;
+		padding: 15px;
+		background-color: $accent;
+		height: 60px;
+		flex-shrink: 0;
+
+		@include phone-wide {
+			height: 50px;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 16px;
+		font-family: "h-bold";
+		color: $white;
+		text-transform: uppercase;
+	}
+
+	&__body {
+		height: calc(100% - 210px);
+		min-height: 300px;
+		padding: 0px 15px;
+		overflow: auto;
+
+		@include phone-wide {
+			height: calc(100% - 137px);
+		}
+
+		@include not-last {
+			margin-bottom: 15px;
+
+			@include phone {
+				margin-bottom: 10px;
+			}
+		}
+	}
+
+	&-link {
+		display: block;
+	}
+
+	&__footer {
+		height: 120px;
+		margin-top: auto;
+		padding: 15px;
+		background-color: $white;
+
+		@include phone-wide {
+			height: 87px;
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		@include not-last {
+			margin-bottom: 20px;
+
+			@include phone-wide {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__social {
+
+		& .social__link {
+			& .icon {
+				@include size(16px);
+			}
+		}
+	}
+
+	&__btn-close {
+
+		&:hover {
+			& .icon {
+				fill: darken($white, 15%);
+			}
+		}
+
+		& .icon {
+			@include size(14px);
+			fill: $white;
+		}
+	}
+}
+
+.product-selected {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: $white;
+	transition: $transition-base;
+
+	@include not-last {
+		margin-right: 7.5px;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	}
+
+	&__img {
+		align-self: center;
+		width: 90px;
+		height: 90px;
+
+		@include phone {
+			width: 60px;
+			height: 60px;
+			align-self: flex-start;
+		}
+	}
+
+	&__link {
+		display: block;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-self: center;
+
+		&-link {
+			display: block;
+			color: $text-color;
+			transition: $transition-base;
+
+			&:hover,
+			&:focus {
+				color: $accent;
+			}
+		}
+	}
+
+	&__title {
+		width: 100%;
+		font-weight: 400;
+		font-size: 16px;
+		font-family: "h-bold";
+
+		@include phone {
+			font-size: 15px;
+		}
+	}
+
+	&__block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+	// &__block-count {
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	align-self: flex-start;
+
+	// 	@include not-last {
+	// 		margin-right: 8px;
+	// 	}
+	// }
+
+	&__price {
+		padding-top: 4px;
+		font-weight: 700;
+		font-size: 14px;
+		color: $accent;
+	}
+
+	&__line-stars {
+
+		@include phone {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__btn-delete {
+		align-self: flex-start;
+		cursor: pointer;
+		@include button-reset;
+
+		& .icon {
+			fill: $accent;
+			@include size(20px);
+		}
+	}
+
+	&--remove-item {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: transform .6s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+			opacity .7s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	}
+}
+
+.total-price {
+	display: flex;
+	align-items: center;
+
+	&__text {
+		font-weight: 400;
+		font-size: 16px;
+		font-family: "h-bold";
+		color: $text-color;
+	}
+
+	&__cost {
+		margin-left: 5px;
+		@extend .total-price__text;
+	}
+}
+
+@keyframes basket-up {
+	0% {
+		transform: translateX(100%);
+	}
+
+	100% {
+		transform: translateX(0);
+
+	}
+}
+
+@keyframes basket-down {
+
+	0% {
+		transform: translateX(0);
+
+	}
+
+	100% {
+		transform: translateX(100%);
+	}
+}

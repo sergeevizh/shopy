@@ -1,0 +1,37 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible' content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+		meta(name="application-name" content="Shopy")
+		meta(name="Description" content="Sidorov A.N")
+		// Chrome, Firefox OS and Opera
+		meta(name="theme-color" content='#ff5912')
+		// Windows Phone
+		meta(name='msapplication-navbutton-color' content='#ff5912')
+		// iOS Safari
+		meta(name='apple-mobile-web-app-status-bar-style', content='#ff5912')
+		link(rel='shortcut icon' href='static/images/favicon/favicon.ico' type='image/x-icon')
+		link(rel='apple-touch-icon' href='static/images/favicon/apple-touch-icon.png')
+		link(rel='apple-touch-icon' sizes='72x72', href='static/images/favicon/apple-touch-icon-72x72.png')
+		link(rel='apple-touch-icon' sizes='114x114', href='static/images/favicon/apple-touch-icon-114x114.png')
+		link(rel="stylesheet" href="static/css/styles.min.css")
+	body(class=pageClass)
+		.wrapper
+			include ../modules/header/header
+			main.content(role="main")
+				block content
+			include ../modules/footer/footer
+			include ../modules/basket-user/basket-user
+			include ../modules/modal/modal
+			.overlay
+		script(src="static/js/main.min.js")
+		block script

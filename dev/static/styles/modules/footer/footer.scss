@@ -1,0 +1,182 @@
+.footer {
+	padding: 84px 0;
+	background-color: $white;
+	flex: 0 0 auto;
+
+	@include landscape {
+		padding: 44px 0;
+	}
+
+	@include phone-wide {
+		padding: 15px 0;
+	}
+
+	&__row {
+		align-items: flex-start;
+		@extend .row;
+	}
+
+	&__logo-copyright {
+		@include make-col-ready();
+		@include make-col(3);
+
+		@include landscape {
+			order: -2;
+			margin-bottom: 30px;
+			@include make-col(6);
+		}
+
+		@include phone {
+			margin-bottom: 20px;
+			@include make-col(12);
+		}
+	}
+
+	&-nav {
+		@include make-col-ready();
+		@include make-col(2);
+
+		@include landscape {
+			@include make-col(4);
+		}
+
+		@include phone {
+			@include make-col(4);
+		}
+	}
+
+	&-playment {
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		@include make-col-ready();
+		@include make-col(3);
+
+		@include landscape {
+			order: -1;
+			margin-bottom: 30px;
+			@include make-col(6);
+		}
+
+		@include phone {
+			margin-bottom: 20px;
+			@include make-col(12);
+		}
+
+		@include not-last {
+			margin-bottom: 13px;
+
+			@include phone {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&__logo {
+		margin-bottom: 14px;
+
+		@include phone {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__copyright {
+		font-size: 14px;
+		color: $footer-text;
+
+		@include landscape {
+			opacity: .6;
+		}
+	}
+
+	&-nav__list {
+
+		@include not-last {
+			margin-bottom: 5px;
+		}
+	}
+
+	&-nav__item {
+		margin-left: 18px;
+		transition: $transition-base;
+		list-style-type: disc;
+
+		@include tablet {
+			line-height: 1.2;
+		}
+
+		@include phone {
+			margin-left: 0px;
+			list-style-type: none;
+		}
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	&-nav__link {
+		font-size: 14px;
+		color: $footer-text;
+		transition: $transition-base;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	&-playment__title {
+		font-weight: 400;
+		font-size: 16px;
+		font-family: "h-bold";
+		color: $accent;
+	}
+
+	&-playment__list {
+		display: flex;
+		flex-wrap: wrap;
+
+		@include not-last {
+			margin-right: 10px;
+		}
+	}
+
+	&-playment__item {
+		position: relative;
+		display: block;
+		width: 25px;
+		height: 25px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			text-align: center;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+
+		&:nth-child(1) {
+			background-image: url(../images/general/card-playment-icon/card-1.svg);
+		}
+
+		&:nth-child(2) {
+			background-image: url(../images/general/card-playment-icon/card-2.svg);
+		}
+
+		&:nth-child(3) {
+			background-image: url(../images/general/card-playment-icon/card-3.svg);
+		}
+
+		&:nth-child(4) {
+			background-image: url(../images/general/card-playment-icon/card-4.svg);
+		}
+
+		&:nth-child(5) {
+			background-image: url(../images/general/card-playment-icon/card-5.svg);
+		}
+	}
+}

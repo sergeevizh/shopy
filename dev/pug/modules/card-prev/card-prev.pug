@@ -1,0 +1,20 @@
+mixin card-prev(addClass, numImg)
+	div(class=addClass)
+		.card-prev
+			a(href="reebok-track-jacket.html" data-href=`static/images/content/prev-product/img${numImg}.jpg`).progressive.replace.card-prev__img
+				img(src=`static/images/content/prev-product/img${numImg}-mini.jpg`, alt="prev product" width="144" height="216").preview
+			.card-prev__header
+				a(href="reebok-track-jacket.html").card-prev__link
+					h3.card-prev__title Reebok Track Jacket
+				span.card-prev__price 100$
+			.card-prev__body
+				.card-prev__block
+					span.card-prev__text sizes
+					+size-product(false,"card-prev__size-product","small")
+				ul.card-prev__colors
+					li.card-prev__color(data-color="#e12e3f")
+					li.card-prev__color(data-color="#34404b")
+					li.card-prev__color(data-color="#3ab3ff")
+					li.card-prev__color(data-color="#2fd967")
+			.card-prev__footer
+				+wishlist('card-prev__wishlist')

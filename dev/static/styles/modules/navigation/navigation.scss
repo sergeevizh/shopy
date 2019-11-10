@@ -1,0 +1,81 @@
+.nav {
+	flex-grow: 1;
+
+	@include tablet {
+		width: 100%;
+		margin-top: 40px;
+		opacity: 1;
+	}
+
+	@include phone-wide {
+		margin-top: 20px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 450px;
+		width: 100%;
+		justify-content: space-between;
+
+		@include tablet {
+			max-width: 100%;
+			justify-content: flex-start;
+		}
+
+		@include landscape {
+			flex-wrap: nowrap;
+		}
+
+		@include not-last {
+			margin-right: 15px;
+
+			@include tablet {
+				margin-right: 40px;
+			}
+
+			@include phone-wide {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	&__item {
+		@include phone {
+			display: inline-block;
+		}
+
+		&.active {
+			.nav__link {
+				color: $accent;
+			}
+		}
+	}
+
+	&__link {
+		transition: $transition-base;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+}
+
+.scroll {
+	@include landscape {
+		white-space: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+}

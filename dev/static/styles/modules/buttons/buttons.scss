@@ -1,0 +1,96 @@
+// btn
+.btn {
+	@include button-reset;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	margin: 2px 0;
+	padding: 0.5em 1em;
+	color: #ffffff;
+	background-color: $accent;
+
+
+
+	&:hover {
+		color: #ffffff;
+		background-color: lighten($accent, 5%);
+	}
+
+	&:active {
+		color: #ffffff;
+		background-color: darken($accent, 5%);
+	}
+}
+
+.btn-order {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	&--accent {
+		color: $accent;
+		transition: $transition-base;
+
+		&:hover {
+			color: lighten($accent, 5%);
+			text-decoration: none;
+			opacity: .7;
+		}
+
+		&:active {
+			color: darken($accent, 5%);
+		}
+	}
+
+	& .icon {
+		position: absolute;
+		fill: $accent;
+		width: 24px;
+		height: 17px;
+		// margin-right: 5px;
+		left: 0;
+		top: 0;
+	}
+}
+
+.btn-delete {
+	background-color: transparent;
+	border: none;
+}
+
+.total-price {
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 39px;
+		background-color: $accent;
+		margin-left: auto;
+		font-weight: 400;
+		font-size: 16px;
+		font-family: "h-bold";
+	}
+}
+
+.search-line {
+	&__btn {
+		width: 100px;
+		height: inherit;
+		color: $white;
+		background-color: $accent;
+		font-weight: 400;
+		font-size: 16px;
+		font-family: "h-bold";
+	}
+}
+
+.close-btn {
+	@include button-reset;
+	@include size(20px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: $transition-base;
+}

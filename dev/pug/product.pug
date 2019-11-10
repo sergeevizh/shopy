@@ -1,0 +1,9 @@
+extends template/main
+
+block variables
+	- var title = "product"
+	- var pageClass = "product-page"
+
+block content
+	include pages/product/catalog
+	include modules/news-letter/news-letter

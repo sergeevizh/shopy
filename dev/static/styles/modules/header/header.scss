@@ -1,0 +1,59 @@
+.header {
+	background-color: $white;
+
+	&__top {
+		padding: 18px 0;
+		border-bottom: 1px solid $border-bottom;
+
+		@include phone-wide {
+			padding: 10px 0;
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+
+	&__nav {
+		border-bottom: 1px solid $border-bottom;
+		padding: 40px 0;
+		align-items: center;
+
+		@include landscape {
+			padding: 20px 0;
+		}
+
+		@include phone-wide {
+			padding: 15px 0;
+		}
+	}
+
+	&__logo {
+		width: 118px;
+		margin-right: 83px;
+
+		@include phone-wide {
+			width: 98px;
+			margin-right: 10px;
+		}
+	}
+
+	&--opacity {
+		opacity: 0;
+		animation: header-opacity .4s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+	}
+}
+
+@keyframes header-opacity {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}

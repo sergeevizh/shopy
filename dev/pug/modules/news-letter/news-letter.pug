@@ -1,0 +1,14 @@
+.container
+	.news-letter
+		.news-letter__row
+			.news-letter__info
+				.news-letter__content
+					span.news-letter__info__title NEWS LETTER
+					span.news-letter__info__subtitle join us now to get all news and special offers
+			.news-letter__form
+				.news-letter__form__wrap
+					form(action="#").form
+						label(for="e-mail").offscreen type your email here
+						input(type="email" id="e-mail" name="e-mail" placeholder="type your email here").news-letter__form__input
+						+icon("e-mail", "icon").news-letter__form__label
+						button(type="submit" value="join us").btn.news-letter__form__submit join us

@@ -1,0 +1,25 @@
+.s-related-products {
+	margin-bottom: 120px;
+
+	@include landscape {
+		margin-bottom: 70px;
+	}
+
+	@include phone-wide {
+		margin-bottom: 50px;
+	}
+}
+
+.slider-related-products {
+	height: 395px;
+}
+
+.related-products__item {
+	& .card-prev {
+		@include phone {
+			flex: 0 0 83.33333%;
+			max-width: 83.33333%;
+			margin-left: 8.33333%;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+.m-b-120 {
+	margin-bottom: 120px;
+
+	@include landscape {
+		margin-bottom: 80px;
+	}
+
+	@include phone-wide {
+		margin-bottom: 50px;
+	}
+}
+
+.new-arrivals {
+
+	&__row {
+		margin-bottom: 50px;
+		@include make-row();
+
+		@include landscape {
+			margin-bottom: 30px;
+		}
+
+		@include phone-wide {
+			margin-bottom: 0;
+		}
+	}
+
+	&__item {
+
+		margin-bottom: 30px;
+		@include make-col-ready();
+		@include make-col(3);
+
+		@include tablet {
+			@include make-col(6);
+		}
+
+		@include phone-wide {
+			@include make-col(6);
+		}
+
+		@include phone {
+			@include make-col(10);
+			@include make-col-offset(1);
+		}
+
+		&--anim {
+			animation: anim-item-top .4s ease-in-out;
+			transition-delay: 1s;
+		}
+
+		@keyframes anim-item-top {
+			0% {
+				opacity: 0;
+				transform: translateY(20px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+}

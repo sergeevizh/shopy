@@ -1,0 +1,24 @@
+.best-sales__item
+	.best-sales__card
+		.best-sales__card__img
+			a(href="reebok-track-jacket.html" data-href="static/images/content/best-sales/img1.jpg").best-sales__card__link.progressive.replace
+				img(src="static/images/content/best-sales/img1-mini.jpg", alt="Reebok Track Jacket" height="90" width="90").preview
+		.best-sales__card__info
+			.best-sales__card__header
+				a(href="reebok-track-jacket.html").best-sales__card__link
+					h3.best-sales__card__title Reebok Track Jacket
+			.best-sales__card__bootom
+				.best-sales__card__block
+					.line-stars.best-sales__line-stars
+						ul.line-stars__list
+							- for(var i = 0; i < 3; i++)
+								li.line-stars__item.line-stars__item--color--accent
+									+icon('star', 'icon')
+								if i == 2
+									li.line-stars__item
+										+icon('star', 'icon')
+					span.best-sales__card__price 100$
+				.best-sales__card__btn
+					button(type="button" value="add to cart").btn-icon add to cart
+						//- span.btn-icon__bg
+						+icon("buy", "icon")

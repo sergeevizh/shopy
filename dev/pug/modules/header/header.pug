@@ -1,0 +1,51 @@
+header.header
+	h1.visually-hidden Shop anywhere
+	.header__top
+		.container
+			.header__row
+				.contacts.header__contacts
+					ul.contacts__list
+						li.contacts__mail.contacts__item
+							a(href="mailto:info@shopy.com").contacts__link info@shopy.com
+								+icon('e-mail', "icon")
+						li.contacts__tel.contacts__item
+							a(href="tel:9965553453").contacts__link 996 - 5553 - 453
+								+icon('smartphone', "icon")
+				.social.header__social
+					ul.social__list
+						li.social__item
+							a(href="#").social__link
+								+icon("facebook-logo", "icon")
+						li.social__item
+							a(href="#").social__link
+								+icon("twitter-logo", "icon")
+						li.social__item
+							a(href="#").social__link
+								+icon("google-logo", "icon")
+						li.social__item
+							a(href="#").social__link
+								+icon("instagram-logo", "icon")
+	.header__nav
+		.container
+			.header__row
+				.logo.header__logo
+					a(href="index.html").logo__link
+						img(src="static/images/general/logo/Logo.png", alt="shope any where" height="39" width="118").logo__img
+				include ../navigation/main-navigation
+				.user-menu
+					ul.user-menu__list
+						li.user-menu__item.search-button
+							button(type="button").user-menu__link
+								+icon("search", "icon")
+						li.user-menu__item.signup
+								button(type="button").user-menu__link
+									+icon("manager", "icon")
+						li.user-menu__item.basket
+							button(type="button").user-menu__link
+								+icon("basket", "icon")
+							span.user-menu__count 12
+				.search-line(role="search")
+					form.form-search.search-line__form
+						label(for="search").offscreen search
+						input(type="text" id="search" placeholder="Search"  aria-label="Search through site content").search-line__input
+						button(type="submit" value="search" id='search-line__btn').search-line__btn.btn search

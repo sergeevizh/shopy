@@ -1,0 +1,14 @@
+//- - var active = page === 
+nav.nav.header__nav-nav.scroll(role="navigation")
+	.nav__row
+		ul.nav__list
+			li.nav__item(class=(pageClass === "index-page" ? "active" : ""))
+				a(href="index.html").nav__link Home
+			li.nav__item(class=(pageClass === "product-page" ? "active" : ""))
+				a(href="product.html").nav__link Products
+			li.nav__item.disable
+				a(href="#").nav__link Hot Deals
+			li.nav__item.disable
+				a(href="#").nav__link About
+			li.nav__item.disable
+				a(href="#").nav__link Contact

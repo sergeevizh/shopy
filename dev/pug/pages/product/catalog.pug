@@ -1,0 +1,73 @@
+section.s-catalog
+	.container
+		.catalog
+			.sidebar.catalog__sidebar
+				.sidebar__row
+					.sidebar__line
+						.sidebar__content
+							.categories
+								.categories__header.sidebar__header
+									span.categories__title.sidebar__title Categories
+								.categories__body.sidebar__body
+									ul.categories__list.sidebar__list
+										li.categories__item.sidebar__item
+											a(href="#").categories__link.sidebar__link Man
+										li.categories__item.sidebar__item
+											a(href="#").categories__link.sidebar__link Women
+										li.categories__item.sidebar__item
+											a(href="#").categories__link.sidebar__link Childrens
+										li.categories__item.sidebar__item
+											a(href="#").categories__link.sidebar__link Hot Deals
+					.sidebar__line.sidebar__line--mob
+						.sidebar__content.sidebar__content--mob
+							.price-filtter
+								.price-filtter__header.sidebar__header.sidebar__header-price-filtter.sidebar__header--mob
+									+icon("expand","sidebar__header-icon")
+									span.price-filtter__title.sidebar__title Price Filtter
+								.price-filtter__body.sidebar__body.sidebar__body--mob
+									.range-slider.sidebar__range-slider
+									.price-filtter__block
+										.price-filtter__val
+											span.price-filtter__text.price-filtter__text-from From
+											input(type="text").price-filtter__input.price-filtter__input-from
+										.price-filtter__val
+											span.price-filtter__text.price-filtter__text-to To
+											input(type="text").price-filtter__input.price-filtter__input-to
+					.sidebar__line.sidebar__line--mob
+						.sidebar__content.sidebar__content--mob
+							.sizes
+								.sizes__header.sidebar__header.sidebar__header--mob
+									+icon("expand","sidebar__header-icon")
+									span.sizes__title.sidebar__title Sizes
+								.sizes__body.sidebar__body.sidebar__body--mob
+									ul.sizes__list.sidebar__list
+										li.sizes__item.sidebar__item Small
+										li.sizes__item.sidebar__item Midum
+										li.sizes__item.sidebar__item Larg
+										li.sizes__item.sidebar__item X Larg
+					.sidebar__line.sidebar__line--mob
+						.sidebar__content.sidebar__content--mob
+							.brands
+								.brands__header.sidebar__header.sidebar__header--mob
+									+icon("expand","sidebar__header-icon")
+									span.brands__title.sidebar__title Brands
+								.brands__body.sidebar__body.sidebar__body--mob
+									ul.brands__list.sidebar__list
+										li.brands__item.sidebar__item Reebok
+										li.brands__item.sidebar__item Addidas
+										li.brands__item.sidebar__item Nike
+										li.brands__item.sidebar__item Active
+			.products
+				.products__content
+					h2.visually-hidden catalog
+					.products__row
+						+card-prev("products__item", "1")
+						+card-prev("products__item", "2")
+						+card-prev("products__item", "3")
+						+card-prev("products__item", "1")
+						+card-prev("products__item", "2")
+						+card-prev("products__item", "3")
+						+card-prev("products__item", "1")
+						+card-prev("products__item", "2")
+						+card-prev("products__item", "3")
+					include ../../modules/load-more-button/load-more-button

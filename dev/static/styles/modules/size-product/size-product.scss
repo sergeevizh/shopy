@@ -1,0 +1,52 @@
+.size-product {
+
+	&__list {
+		display: inline-block;
+		margin-left: 21px;
+
+		@include not-last {
+			margin-right: 22px;
+
+			&:after {
+				position: absolute;
+				content: '-';
+				right: -14px;
+				top: -1px;
+			}
+		}
+	}
+
+	&__item {
+		position: relative;
+		text-transform: uppercase;
+		font-size: 14px;
+		cursor: pointer;
+		display: inline-block;
+		transition: $transition-base;
+
+		&.is-active {
+			.size-product__size {
+				color: $accent;
+				transform: scale(1.3);
+				display: inline-block;
+
+				@include phone-wide {
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	&__size {
+		display: inline-block;
+
+		&:hover {
+			color: $accent;
+			transform: scale(1.3);
+
+			@include phone-wide {
+				transform: scale(1.2);
+			}
+		}
+	}
+}

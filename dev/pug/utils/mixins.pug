@@ -1,0 +1,35 @@
+include ../modules/card-prev/card-prev
+
+mixin icon(name,mod)
+	if(mod)
+		svg(class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+	else
+		svg(class="svg-sprite-icon icon-" + name)
+			use(xlink:href="static/images/svg/symbol/sprite.svg#" + name)
+
+
+mixin wishlist(addClass)
+	div(class="wishlist " + addClass)
+		ul.wishlist__list.wishlist__list--flex-end
+			li.wishlist__item
+				+icon("share","icon")
+			li.wishlist__item
+				+icon("buy","icon")
+			li.wishlist__item
+				+icon("like","icon")
+
+
+mixin size-product(text,addClass, mod)
+	div(class="size-product " + addClass + " " + addClass + "--" + mod)
+		if text
+			span.size-product__label Choos Size
+		ul.size-product__list
+			li.size-product__item
+				span.size-product__size s
+			li.size-product__item
+				span.size-product__size m
+			li.size-product__item
+				span.size-product__size l
+			li.size-product__item
+				span.size-product__size xl

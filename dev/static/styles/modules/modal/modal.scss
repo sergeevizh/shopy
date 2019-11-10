@@ -1,0 +1,197 @@
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		z-index: $zindex-modal;
+		padding-right: 15px;
+		padding-left: 15px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		outline: 0;
+
+		&--is-active {
+			display: block;
+		}
+	}
+
+	.modal-signup {
+		position: relative;
+		top: 15vh;
+		left: 50%;
+		display: block;
+		max-width: 340px;
+		width: auto;
+		height: auto;
+		padding: 30px;
+		background-color: $white;
+		opacity: 0;
+		transform: translate(0, 0);
+		transform: translate(-50%, 40px);
+		visibility: hidden;
+		animation: signup-down .3s ease-in-out;
+		margin-bottom: 10vh;
+
+		@include phone {
+			top: 10vh;
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+
+		&__container {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			@include not-last {
+				margin-bottom: 30px;
+			}
+		}
+
+		&__header {
+			text-align: center;
+		}
+
+		&__title {
+			font-weight: 400;
+			font-size: 18px;
+			font-family: "h-bold";
+		}
+
+		&-form {
+			display: flex;
+			flex-direction: column;
+
+			@include not-last {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__field {
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		&__input {
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: 39px;
+			padding-left: 17px;
+			font-weight: 400;
+			font-size: 16px;
+			font-family: "h-reg";
+			color: $text-color;
+			background-color: $white;
+			border: 1px solid $border-line;
+			transition: $transition-base;
+
+			&:hover {
+				border: 1px solid darken($border-line, 15%);
+			}
+
+			@include placeholder {
+				font-weight: 400;
+				font-size: 14px;
+				font-family: "h-reg";
+				color: #7c8791;
+				font-style: italic;
+			}
+		}
+
+		&__btn {
+			width: 100%;
+			height: 39px;
+			background-color: $accent;
+		}
+
+		&--is-active {
+			opacity: 1;
+			transform: translate(-50%, 0);
+			visibility: visible;
+			animation: signup-an .4s ease-in-out;
+		}
+
+		&__btn-close {
+			position: absolute;
+			top: 5px;
+			right: 5px;
+			margin: 0;
+			opacity: .7;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			& .icon {
+				fill: $text-color;
+				@include size(12px);
+			}
+		}
+
+		&__footer {
+			text-align: center;
+
+			&-header {
+				margin-bottom: 20px;
+			}
+
+			&-title {
+				font-weight: 400;
+				font-size: 18px;
+				font-family: "h-bold";
+			}
+
+			&-btn {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				height: 39px;
+				color: $white;
+				background-color: $river-bed;
+				transition: $transition-base;
+
+				&:hover {
+					color: #ffffff;
+					background-color: lighten($river-bed, 5%);
+				}
+
+				&:active {
+					color: #ffffff;
+					background-color: darken($river-bed, 5%);
+				}
+			}
+		}
+	}
+
+	@keyframes signup-an {
+		0% {
+			opacity: 0;
+			transform: translate(-50%, 40px);
+			visibility: hidden;
+		}
+
+		100% {
+			opacity: 1;
+			transform: translate(-50%, 0);
+			visibility: visible;
+		}
+	}
+
+	@keyframes signup-down {
+
+		0% {
+			opacity: 1;
+			transform: translate(-50%, 0);
+			visibility: visible;
+		}
+
+		100% {
+			opacity: 0;
+			transform: translate(-50%, 40px);
+			visibility: hidden;
+		}
+	}
